@@ -1,0 +1,5 @@
+[
+  { "searchText": "laptop", "expectResults": true },
+  { "registerPageHeading": "Register", "expectResults": true },
+  { "loginPageHeading": "Welcome, Please Sign In!", "expectResults": false }
+]
