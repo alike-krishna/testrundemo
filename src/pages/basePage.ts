@@ -6,11 +6,6 @@ export class BasePage {
     this.page = page;
   }
 
-  async gotoHome() {
-    //await this.page.goto("https://demo.nopcommerce.com/");
-    await this.page.goto("https://roboticqa.com/");
-  }
-
   async fillAction(locator: Locator, value: string) {
     await locator.fill(value);
   }

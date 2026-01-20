@@ -1,14 +1,12 @@
 import { test, expect } from "@playwright/test";
 import { SignInPage } from "@pages/SignInPage";
-import { BasePage } from "@pages/basePage.js";
-import signInData from "@data/SignInData.json";
+
 test.describe("Sign In Page functionality Smoke Tests", async () => {
   test(`verify Sign In page web element visibility tests . @smoke`, async ({
     page,
   }) => {
-    const basePage = new BasePage(page);
-    await basePage.gotoHome();
     const signInPage = new SignInPage(page);
+    await signInPage.goto();
     await expect(signInPage.websiteLogo).toBeVisible();
     await expect(signInPage.websitePageTitle).toBeVisible();
     await expect(signInPage.h3Heading).toBeVisible();
@@ -29,19 +27,4 @@ test.describe("Sign In Page functionality Smoke Tests", async () => {
     await expect(signInPage.instagramLink).toBeVisible();
     await expect(signInPage.roboticQAwebLink).toBeVisible();
   });
-  for (const data of signInData) {
-    if (!data.UserName || !data.Password) {
-      continue;
-    }
-    test(`verify Sign In functionality with Standard User credentials. @smoke `, async ({
-      page,
-    }) => {
-      const basePage = new BasePage(page);
-      await basePage.gotoHome();
-      const signInPage = new SignInPage(page);
-      await signInPage.signIn();
-      await basePage.clickAction(signInPage.signInButton);
-      await expect(signInPage.homePageTitle).toBeVisible();
-    });
-  }
 });

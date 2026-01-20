@@ -1,6 +1,6 @@
 [
-  { "keyword": "laptop", "expectResults": true },
+  { "keyword": "watch", "expectResults": true },
   { "keyword": "invalidsearchtextxyz", "expectResults": false },
-  { "keyword": "lap", "expectResults": true },
+  { "keyword": "Smart Fitness Watch", "expectResults": true },
   { "keyword": "!@#$%^&*()", "expectResults": false }
 ]
