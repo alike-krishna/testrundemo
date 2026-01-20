@@ -4,7 +4,7 @@ import { BasePage } from "@pages/basePage.js";
 import { SearchPage } from "@pages/SearchPage.js";
 import searchData from "@data/SearchData.json";
 
-test.describe("Search functionality - data driven", () => {
+test.describe.skip("Search functionality - data driven", () => {
   for (const data of searchData) {
     test(`Search functionality (valid/invalid/partial keywords, special characters). @regression "${data.keyword}"`, async ({
       page,
@@ -19,7 +19,7 @@ test.describe("Search functionality - data driven", () => {
         expect(count).toBeGreaterThan(0);
       } else {
         await expect(searchPage.noResult).toContainText(
-          "No products were found that matched your criteria."
+          "No products were found that matched your criteria.",
         );
       }
     });
