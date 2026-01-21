@@ -1,5 +1,4 @@
 import { Page, Locator } from "@playwright/test";
-import signInData from "@data/SignInData.json";
 import { LoginPage } from "@pages/LoginPage";
 
 export class SignInPage extends LoginPage {
