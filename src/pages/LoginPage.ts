@@ -18,9 +18,9 @@ export class LoginPage {
   }
 
   async login() {
-    const { UserName, Password } = signInData[0];
-    await this.usernameInput.fill(UserName);
-    await this.passwordInput.fill(Password);
+    //const { UserName, Password } = signInData[0];
+    await this.usernameInput.fill(process.env.APP_USERNAME!);
+    await this.passwordInput.fill(process.env.APP_PASSWORD!);
     await this.signInButton.click();
   }
 }
